@@ -78,14 +78,14 @@ client.on("messageCreate", message => {
 
 async function help(message) {
     let embed = new Discord.MessageEmbed()
-    .setColor(color)
-    .setTitle(`Help Page`)
-    .setDescription(`List of commands to use`)
-    .setFields({name: `\`${prefix}set\`:`, value:`Allows you to edit settings for bot.`},
-    {name: `\`${prefix}whitelist [add/remove/list]\`:`, value:`Adds, removes, or lists whitelisted user ids.`},
-    {name: `\`${prefix}bypasslist [add/remove/list]\`:`, value:`Adds, removes, or lists bypassed listed user ids.`},
-    {name: `\`${prefix}[channel(s), channellist(s)] [add/remove/list]\`:`, value:`Adds, removes, or lists watched channels.`, inline: true}
-    )
+        .setColor(color)
+        .setTitle(`Help Page`)
+        .setDescription(`List of commands to use`)
+        .setFields({ name: `\`${prefix}set\`:`, value: `Allows you to edit settings for bot.` },
+            { name: `\`${prefix}whitelist [add/remove/list]\`:`, value: `Adds, removes, or lists whitelisted user ids.` },
+            { name: `\`${prefix}bypasslist [add/remove/list]\`:`, value: `Adds, removes, or lists bypassed listed user ids.` },
+            { name: `\`${prefix}[channel(s), channellist(s)] [add/remove/list]\`:`, value: `Adds, removes, or lists watched channels.`, inline: true }
+        )
     message.channel.send({ embeds: [embed] })
 }
 
@@ -170,7 +170,7 @@ async function bypasslist(message, args) {
     } else if (args[1].toLowerCase() === "remove") {
         let user = message.mentions.users.first()
         if (!config["bypasslist"].includes(user.id)) return returnInvaildSyntax(message, "bypasslist remove @user/userID (User Not bypasslisted)");
-    
+
         if (user) {
             config["bypasslist"].splice(config["bypasslist"].indexOf(user.id), 1)
 
@@ -254,10 +254,10 @@ async function set(message, args) {
 
     if (!args[1]) {
         let embed = new Discord.MessageEmbed()
-        .setColor(color)
-        .setTitle(`Settings Help`)
-        .setDescription(`*Use* `+`\`${prefix}set "entry"\``+`*for more information on each entry.*`)
-        .setFields({name: `Possible Entries`, value:`prefix, color, redirectchannel, staffrole, infractiontimer, totalinfractions, permissions`})
+            .setColor(color)
+            .setTitle(`Settings Help`)
+            .setDescription(`*Use* ` + `\`${prefix}set "entry"\`` + `*for more information on each entry.*`)
+            .setFields({ name: `Possible Entries`, value: `prefix, color, redirectchannel, staffrole, infractiontimer, totalinfractions, permissions` })
         message.channel.send({ embeds: [embed] })
     } else if (args[1].toLowerCase() === "prefix") {
         if (!args[2]) return returnInvaildSyntax(message, `set prefix 'prefix'`);

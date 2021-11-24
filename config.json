@@ -14,12 +14,8 @@
     "toManyMessages": "%u, you have sent too many attachments in this channel. Please use %c"
   },
   "whitelist": [
-    "601125543781597194",
     "333377792693764099"
   ],
   "bypasslist": [],
-  "channels": [
-    "909485161157103617",
-    "852271626518134834"
-  ]
+  "channels": []
 }
