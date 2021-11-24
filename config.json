@@ -1,0 +1,25 @@
+{
+  "token": "",
+  "prefix": "-",
+  "color": "#16a085",
+  "redirectChannel": "852272715725275156",
+  "staffrole": "852221273492029470",
+  "infractionTimer": "60",
+  "totalInfractions": 2,
+  "permissions": {
+    "setCMD": 2,
+    "autobypass": 2
+  },
+  "messages": {
+    "toManyMessages": "%u, you have sent too many attachments in this channel. Please use %c"
+  },
+  "whitelist": [
+    "601125543781597194",
+    "333377792693764099"
+  ],
+  "bypasslist": [],
+  "channels": [
+    "909485161157103617",
+    "852271626518134834"
+  ]
+}
